@@ -26,11 +26,7 @@ object IntList {
   def undef: Nothing = throw new UnsupportedOperationException("operation is undefined")
 
   def fromSeq(seq: Seq[Int]): IntList = {
-    var intArray: IntList = IntNil
-    for (i <- seq.size - 1 to 0 by -1) {
-      intArray = ::(seq(i), intArray)
-    }
-    intArray
+    seq.foldRight(IntNil: IntList)((head: Int, tail: IntList) => ::(head, tail))
   }
 
   def sum(intList: IntList): Int = intList match {

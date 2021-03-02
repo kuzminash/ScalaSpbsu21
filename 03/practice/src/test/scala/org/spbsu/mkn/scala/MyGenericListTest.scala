@@ -7,7 +7,7 @@ class MyGenericListTest extends AnyFunSuite {
 
 
   test("head") {
-    assert(fromSeq[Int](Seq(1,2,3)).head == 1)
+    assert(fromSeq(Seq(1,2,3)).head == 1)
     assert(fromSeq(Seq(1)).head == 1)
     assertThrows[UnsupportedOperationException](fromSeq(Seq()).head)
   }

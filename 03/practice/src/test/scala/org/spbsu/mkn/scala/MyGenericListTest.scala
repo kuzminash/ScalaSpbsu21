@@ -1,12 +1,10 @@
 package org.spbsu.mkn.scala
 
 import org.scalatest.funsuite.AnyFunSuite
-import org.spbsu.mkn.scala.MyGenericList.{fromSeq, size, sum}
+import org.spbsu.mkn.scala.List.{fromSeq, size, sum}
 
 class MyGenericListTest extends AnyFunSuite {
 
-  // remove after implementing actual MyNil
-  object MyNil
 
   test("head") {
     assert(fromSeq(Seq(1,2,3)).head == 1)
@@ -34,7 +32,6 @@ class MyGenericListTest extends AnyFunSuite {
   }
 
   test("map") {
-    assert(MyNil.map(_ * 2) == MyNil)
     assert(fromSeq(Seq(1,2,3)).map(_ * 2) == fromSeq(Seq(2,4,6)))
     assert(fromSeq(Seq(1,2,3)).map(identity) == fromSeq(Seq(1,2,3)))
   }

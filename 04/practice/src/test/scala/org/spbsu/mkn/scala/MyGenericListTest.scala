@@ -1,7 +1,7 @@
 package org.spbsu.mkn.scala
 
 import org.scalatest.funsuite.AnyFunSuite
-import org.spbsu.mkn.scala.List.{fromSeq, size, sum}
+import org.spbsu.mkn.scala.List.{fromSeq, size, sort, sum}
 
 class MyGenericListTest extends AnyFunSuite {
 
@@ -47,4 +47,9 @@ class MyGenericListTest extends AnyFunSuite {
     assert(sum(fromSeq(Seq(1))) == 1)
   }
 
+  test("sort") {
+    assert(sort(fromSeq(Seq(1, 4, 6))) == fromSeq(Seq(1, 4, 6)))
+    assert(sort(fromSeq(Seq(2, 1))) == fromSeq(Seq(1, 2)))
+    assert(sort(fromSeq(Seq(10, 9, 7, 5, 6))) == fromSeq(Seq(5, 6, 7, 9, 10)))
+  }
 }
